@@ -10,25 +10,26 @@ export default function Home() {
   const [edit, setEdit] = useState(null)
   const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("");
+  const [dark, setDark] = useState(false)
 
-   useEffect(() => {
-      console.log("Student List Changed");
-    }, [students]);
-  
-   useEffect(() => {
-     const savedStudents = localStorage.getItem("students");
-     if (savedStudents) {
-       setStudents(JSON.parse(savedStudents));
-     }
-   }, []);
- 
-   useEffect(() => {
-     if (students.length > 0) {
-       localStorage.setItem("students", JSON.stringify(students));
-     } else {
-       localStorage.removeItem("students");
-     }
-   }, [students]);
+  useEffect(() => {
+    console.log("Student List Changed");
+  }, [students]);
+
+  useEffect(() => {
+    const savedStudents = localStorage.getItem("students");
+    if (savedStudents) {
+      setStudents(JSON.parse(savedStudents));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (students.length > 0) {
+      localStorage.setItem("students", JSON.stringify(students));
+    } else {
+      localStorage.removeItem("students");
+    }
+  }, [students]);
 
   //CREATE
   function adddata() {
@@ -80,17 +81,6 @@ export default function Home() {
     setEdit(null)
   }
 
-  //SEARCH
-  // function searchStudent(items) {
-  //   const keyword = search.toLowerCase();
-
-  //   return (
-  //     items.name.toLowerCase().includes(keyword) ||
-  //     items.course.toLowerCase().includes(keyword) ||
-  //     items.age.toString().includes(keyword)
-  //   );
-  // }
-
   const filteredStudents = students.filter((items) =>
     items.name.toLowerCase().includes(search.toLowerCase()) ||
     items.city.toLowerCase().includes(search.toLowerCase()) ||
@@ -104,13 +94,13 @@ export default function Home() {
       sortedStudents.sort((a, b) => a.name.localeCompare(b.name))
     }
     else if (sortBy === "za") {
-      sortedStudents.sort((a,b) => b.name.localeCompare(a.name))
+      sortedStudents.sort((a, b) => b.name.localeCompare(a.name))
     }
-     else if (sortBy === "azc") {
+    else if (sortBy === "azc") {
       sortedStudents.sort((a, b) => a.city.localeCompare(b.city))
     }
-     else if (sortBy === "zac") {
-      sortedStudents.sort((a,b) => b.city.localeCompare(a.city))
+    else if (sortBy === "zac") {
+      sortedStudents.sort((a, b) => b.city.localeCompare(a.city))
     }
     else if (sortBy === "ageLow") {
       sortedStudents.sort((a, b) => a.age - b.age)
@@ -127,41 +117,41 @@ export default function Home() {
     return sortedStudents;
   }
 
-
   return (
-    <div>
-      <h1>Student Dashboard</h1>
-
+    <div className={dark ? "bg-black text-white min-h-screen" : "bg-white text-black min-h-screen"}>
+      <div className="flex justify-between items-center p-4">
+        <h1>Student Dashboard</h1>
+        <button className="border px-3 py-1 rounded" onClick={() => setDark(!dark)}>Toggle</button>
+      </div>
 
       <input
-        className="border p-3 rounded w-full"
+        className="border p-3 rounded w-full placeholder:text-gray-500"
         type="text"
         placeholder="Search name or age or city..."
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      <input className="border m-6 p-1"
+      <input className="border m-6 p-1 placeholder:text-gray-500"
         type="text"
         placeholder="Student Name"
         value={name}
         onChange={(e) => setName(e.target.value)} />
 
-
-      <input className="border m-6 p-1"
+      <input className="border m-6 p-1 placeholder:text-gray-500"
         type="text"
         placeholder="Student's age"
         value={age}
         onChange={(e) => setAge(e.target.value)} />
 
-      <input className="border m-6 p-1"
+      <input className="border m-6 p-1 placeholder:text-gray-500"
         type="text"
         placeholder="City Name"
         value={city}
         onChange={(e) => setCity(e.target.value)} />
 
       <div>
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+        <select className="border" value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
           <option value="">Select Sorting</option>
 
           <option value="az">A → Z</option>
@@ -183,10 +173,10 @@ export default function Home() {
       </div>
 
       {edit === null ? (<button onClick={() => adddata()}
-        className="border">Add</button>) :
+        className="border m-2 p-1">Add</button>) :
 
         (<button onClick={() => updatedata()}
-          className="border">Update</button>)}
+          className="border m-2 p-1">Update</button>)}
 
       <div className="grid grid-cols-5 p-12 gap-6">
 
@@ -202,12 +192,13 @@ export default function Home() {
             <div>{items.name}</div>
             <div>{items.age}</div>
             <div>{items.city}</div>
+            
             <div>
 
-              <button className="border"
+              <button className="border mr-2 p-1"
                 onClick={() => deletedata(items.id)}>Delete</button>
 
-              <button className="border"
+              <button className="border p-1"
                 onClick={() => editdata(items)}>Edit</button>
 
             </div>
