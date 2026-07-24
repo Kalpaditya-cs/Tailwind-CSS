@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import React from "react";
+
 const data = [
   { id: 1, name: "Rahul Sharma", age: 20, course: "React" },
   { id: 2, name: "Aman Singh", age: 21, course: "Node" },
