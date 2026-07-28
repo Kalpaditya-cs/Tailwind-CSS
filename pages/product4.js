@@ -66,7 +66,16 @@ export default function Home() {
 
                     {/* =========================
               Hero Section
-          ========================== */}
+          ========================== 
+          vh = viewport height.
+80vh = 80% of the browser window's height.
+
+So if the browser height is:
+
+1000px → 80vh = 800px
+900px → 80vh = 720px
+
+The section will always be at least 80% of the screen height.*/}
 
                     <section className="flex items-center min-h-[80vh]">
 
