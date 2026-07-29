@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaHome, FaNewspaper, FaSign, FaSun } from 'react-icons/fa'
 import { FaHireAHelper, FaPersonRifle } from 'react-icons/fa6'
-import { ResponsiveContainer, BarChart, XAxis, YAxis, Tooltip, Bar } from 'recharts'
+
 
 export default function Home() {
     const [data,setData] = useState("")
