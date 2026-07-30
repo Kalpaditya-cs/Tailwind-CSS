@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaHome, FaNewspaper, FaSign, FaSun } from 'react-icons/fa'
 import { FaHireAHelper, FaPersonRifle } from 'react-icons/fa6'
 
 
 export default function Home() {
-    const [data,setData] = useState("")
+    const [data,setData] = useState(null)
+    const [city , setCity] = useState("")
+
+    useEffect(() => {
+        console.log("Started")
+    },[])
+
+    async function getweather(){
+        const response = await fetch(`/api/weather?city=${city}`)
+        const result = await response.json()
+        setData(result)
+    }
 
     const sidebar = [
         { name: "HOME", icon: <FaHome /> },
@@ -26,6 +37,14 @@ export default function Home() {
                     <h1 className='text-2xl font-bold text-blue-400 ml-2'>Weathero</h1>
                 </div>
                 <nav className='flex md:flex items-center gap-5'>
+                    <div></div><input type='text'
+                    value={city}
+                    placeholder='Search City'
+                    className='text-black'
+                    onChange={(e) => setCity(e.target.value)}
+                    />
+                    <button onClick={getweather}
+                    className='border'>Search</button>
                     <img src='vercel.svg'
                         className='w-9 h-9' />
                     <h1 className='font-sans text-black'>Hi, Kal</h1>

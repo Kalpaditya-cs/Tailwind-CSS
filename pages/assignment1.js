@@ -6,6 +6,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black flex">
 
+{/* LEFT SIDE */}
+
       <div className="w-full bg-black p-16 pt-20" >
         <div className="space-y-4 pb-6 border-b border-gray-800">
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
@@ -66,11 +68,10 @@ export default function Home() {
             </p>
           </details>
         </div>
-
-
       </div>
+      
 
-
+      {/* RIGHT SIDE */}
 
       <div className="w-full bg-linear-to-br from-indigo-800 via-purple-400 to-teal-800 flex items-center justify-center">
         <div className="h-130 w-130 border-2  bg-gray-700 rounded-2xl ">
