@@ -6,8 +6,13 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black flex">
 
+{/* LEFT SIDE */}
+
       <div className="w-full bg-black p-16 pt-20" >
         <div className="space-y-4 pb-6 border-b border-gray-800">
+          
+          {/* Upper Section */}
+
           <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
             Automate your path to production
           </h1>
@@ -20,9 +25,11 @@ export default function Home() {
           </h2>
         </div>
 
+        {/* HERO SECTION START FROM HERE */}
+
+        {/* Detail Block 1 */} 
 
         <div className="flex items-center justify-between pb-6 border-b border-gray-800/60 pt-6 ">
-
 
           <details>
             <summary className="flex justify-between items-center list-none font-semibold text-lg text-gray-200 hover:text-white select-none gap-84">
@@ -34,7 +41,8 @@ export default function Home() {
             </p>
           </details>
         </div>
-
+        
+        {/* Detail Block 2 */}
 
         <div className="flex items-center justify-between pb-6 pt-6 border-b border-gray-800 ">
 
@@ -51,8 +59,9 @@ export default function Home() {
           </details>
         </div>
 
-        <div className="flex items-center justify-between pb-6 pt-6 border-b border-gray-800 ">
+        {/* Detail Block 3 */}
 
+        <div className="flex items-center justify-between pb-6 pt-6 border-b border-gray-800 ">
 
           <details>
             <summary className="flex justify-between items-center list-none font-semibold text-lg text-gray-200 hover:text-white select-none gap-104">
@@ -66,14 +75,18 @@ export default function Home() {
             </p>
           </details>
         </div>
-
-
       </div>
+      
 
-
+      {/* RIGHT SIDE */}
+  
+      {/* Background */}
 
       <div className="w-full bg-linear-to-br from-indigo-800 via-purple-400 to-teal-800 flex items-center justify-center">
         <div className="h-130 w-130 border-2  bg-gray-700 rounded-2xl ">
+          
+          {/* Header */}
+
           <header className="flex justify-between items-center h-12 sapce-x-5 p-2 bg-gray-800 rounded-2xl">45,67 Workflow runs
             <div className="flex space-x-2">
               <button>Event<span className=" text-gray-200 hover:text-blue-300 "> ▾</span></button>
@@ -82,16 +95,21 @@ export default function Home() {
               <button>Actor<span className=" text-gray-200 hover:text-blue-300 "> ▾</span></button>
             </div>
           </header>
+
+          {/* Main Content */}
+
           <div className="flex flex-col items-center justify-between space-y-3 pt-6 text-black p-5">
 
             <div className="flex items-center justify-between pb-6 border-b border-gray-800/60 ">
 
+              {/* 1st Block */}
+              
               <h3 className=" font-mono text-white hover:text-gray-200 ">
-                <input type="checkbox" className=" w-5 h-5 rounded-full accent-green-500 mt-1 " />
+                <input type="checkbox" className=" size-4 rounded-full accent-green-500 mt-1 " />
                 <span className="ml-2"> Fix IE12 incompatibilities</span>
                 <br /><span className="text-gray-400">Build, test and deploy #15078: pull request #239122 synchronize by mona</span>
               </h3>
-              <div class="text-right text-gray-500 shrink-0 space-y-1 ml-2">
+              <div className="text-right text-gray-500 shrink-0 space-y-1 ml-2">
                 <div className="flex items-center justify-end gap-2">
                   <MdOutlineDateRange/><span>1 hour ago</span></div>
                 <div className="flex items-center justify-end gap-2">
@@ -101,14 +119,16 @@ export default function Home() {
               </div>
 
             </div>
+
+            {/* 2nd Block */}
 
             <div className="flex items-center justify-between pb-6 border-b border-gray-800/60 ">
               <h3 className=" font-mono text-white hover:text-gray-200 ">
-                <input type="checkbox" className=" w-5 h-5 rounded-full accent-green-500 mt-1"/>
+                <input type="checkbox" className=" size-4 rounded-full accent-green-500 mt-1"/>
                 <span className="ml-2">Accessibility tests</span>
                 <br /><span className="text-gray-400">Build, test and deploy #15078: pull request #239122 synchronize by mona</span>
               </h3>
-               <div class="text-right text-gray-500 shrink-0 space-y-1 ml-2">
+               <div className="text-right text-gray-500 shrink-0 space-y-1 ml-2">
                 <div className="flex items-center justify-end gap-2">
                   <MdOutlineDateRange/><span>1 hour ago</span></div>
                 <div className="flex items-center justify-end gap-2">
@@ -118,14 +138,16 @@ export default function Home() {
               </div>
             </div>
 
+            {/* 3rd Block */}
+
             <div className="flex items-center justify-between pb-6 border-b border-gray-800/60 ">
               <h3 className=" font-mono text-white hover:text-gray-200">
-                <input type="checkbox" className=" w-5 h-5 rounded-full accent-green-500 mt-1"/>
+                <input type="checkbox" className=" size-4 rounded-full accent-green-500 mt-1"/>
                 <span className="ml-2">Update changelog and release notes</span>
 
                 <br /><span className="text-gray-400">Build, test and deploy #15078: pull request #239122 synchronize by mona</span>
               </h3>
-              <div class="text-right text-gray-500 shrink-0 space-y-1 ml-2">
+              <div className="text-right text-gray-500 shrink-0 space-y-1 ml-2">
                 <div className="flex items-center justify-end gap-2">
                   <MdOutlineDateRange/><span>1 hour ago</span></div>
                 <div className="flex items-center justify-end gap-2">
@@ -134,14 +156,16 @@ export default function Home() {
                 </div>
               </div>
               </div>
+
+              {/* 4th Block */}
 
             <div className="flex items-center justify-between pb-6  ">
               <h3 className=" font-mono text-white hover:text-gray-200 ">
-                <input type="checkbox" className=" w-5 h-5 rounded-full accent-green-500 mt-1" />
+                <input type="checkbox" className=" size-4 rounded-full accent-green-500 mt-1" />
                 <span className="ml-2">Migrate to latest Storybook</span>
                 <br /><span className="text-gray-400">Build, test and deploy #15078: pull request #239122 synchronize by mona</span>
               </h3>
-               <div class="text-right text-gray-500 shrink-0 space-y-1 ml-2">
+               <div className="text-right text-gray-500 shrink-0 space-y-1 ml-2">
                 <div className="flex items-center justify-end gap-2">
                   <MdOutlineDateRange/><span>1 hour ago</span></div>
                 <div className="flex items-center justify-end gap-2">
@@ -150,13 +174,11 @@ export default function Home() {
                 </div>
               </div>
               </div>
-
 
           </div>
         </div>
 
       </div>
-
     </div >
   )
 }
